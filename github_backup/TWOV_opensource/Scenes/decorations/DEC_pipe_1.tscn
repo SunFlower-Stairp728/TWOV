@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0dygi6ky21a2"]
-
-[ext_resource type="Texture2D" uid="uid://b4xvsyaqt3g43" path="res://Sprite/decorations/pipe_1.png" id="2_1420s"]
-
-[node name="Sprite2D" type="Sprite2D"]
-rotation = 1.5707964
-scale = Vector2(60, 50)
-texture = ExtResource("2_1420s")
