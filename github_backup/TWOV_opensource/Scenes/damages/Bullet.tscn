@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://csvsb3qy0aptl"]
+
+[ext_resource type="Script" uid="uid://cpfqvl78nq7f7" path="res://Scripts/damages/bullet.gd" id="1_14k46"]
+[ext_resource type="Texture2D" uid="uid://cau3mjd2lgvj8" path="res://Sprite/entities/bullet_body.png" id="2_qvus8"]
+[ext_resource type="Texture2D" uid="uid://bw5yewb8a3nc2" path="res://Sprite/entities/bullet_centre.png" id="3_pypll"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14k46"]
+size = Vector2(40, 40)
+
+[sub_resource type="Animation" id="Animation_pypll"]
+resource_name = "RESET"
+
+[sub_resource type="Animation" id="Animation_qvus8"]
+resource_name = "bullet_start"
+length = 0.43
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.366667)
+}
+
+[sub_resource type="Animation" id="Animation_14k46"]
+resource_name = "walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bullet:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, 4.725, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.766667)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vg3fc"]
+_data = {
+&"RESET": SubResource("Animation_pypll"),
+&"bullet_start": SubResource("Animation_qvus8"),
+&"walk": SubResource("Animation_14k46")
+}
+
+[node name="bullet" type="Node2D"]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_14k46")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.3, 0.3)
+
+[node name="bullet" type="Sprite2D" parent="Area2D"]
+scale = Vector2(3, 3)
+texture = ExtResource("2_qvus8")
+
+[node name="bullet_centre" type="Sprite2D" parent="Area2D"]
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(1.08108, 1.05263)
+texture = ExtResource("3_pypll")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1.58946e-06)
+shape = SubResource("RectangleShape2D_14k46")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_vg3fc")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Area2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_vg3fc")
+}
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -8.9407e-07)
+scale = Vector2(2.2, 2.2)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

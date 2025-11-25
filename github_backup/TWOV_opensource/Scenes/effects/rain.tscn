@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://diyeioufeiedb"]
+
+[ext_resource type="Script" uid="uid://bo4s8nbfl8qi3" path="res://Scripts/others/rain.gd" id="3_uqfv4"]
+
+[sub_resource type="Gradient" id="Gradient_winej"]
+colors = PackedColorArray(0.23392478, 0.23392579, 0.2339249, 1, 0.84890544, 0.84890544, 0.84890544, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kmkfn"]
+gradient = SubResource("Gradient_winej")
+width = 40
+height = 70
+fill_to = Vector2(1, 1)
+metadata/_snap_count = 2
+
+[node name="rain" type="CPUParticles2D"]
+modulate = Color(1, 1, 1, 0.09803922)
+z_index = 1
+amount = 100
+texture = SubResource("GradientTexture2D_kmkfn")
+lifetime = 3.0
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+gravity = Vector2(0, 1800)
+script = ExtResource("3_uqfv4")

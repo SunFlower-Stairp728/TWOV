@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce40xb0xqf8oa"]
+
+[ext_resource type="Script" uid="uid://dvogf4xys5usu" path="res://Scripts/controls/managers/obj_manager.gd" id="1_irqty"]
+[ext_resource type="Texture2D" uid="uid://do1blj6bjc3do" path="res://Sprite/blocks/grass.png" id="2_aks6t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mw2ei"]
+size = Vector2(200, 153)
+
+[node name="Node2D" type="Node2D"]
+z_index = 1
+scale = Vector2(1.113, 1.063)
+script = ExtResource("1_irqty")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_aks6t")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(0.8, 0.8)
+collision_layer = 19
+collision_mask = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 23.5)
+shape = SubResource("RectangleShape2D_mw2ei")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-80, -80, 160, 160)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,0 +1,132 @@
+[gd_resource type="TileSet" load_steps=61 format=3 uid="uid://drup5o6mkmkj"]
+
+[ext_resource type="PackedScene" uid="uid://cdypus4b1d1vq" path="res://Scenes/damages/TK_spikes.tscn" id="6_4subp"]
+[ext_resource type="PackedScene" uid="uid://k45kaghjffye" path="res://Scenes/decorations/DEC_cell_tower.tscn" id="7_ly0jm"]
+[ext_resource type="PackedScene" uid="uid://bbct5om1mxvq6" path="res://Scenes/decorations/DEC_bush.tscn" id="8_s3kuw"]
+[ext_resource type="PackedScene" uid="uid://c51uw6atvq5o0" path="res://Scenes/decorations/DEC_well.tscn" id="9_f3e84"]
+[ext_resource type="PackedScene" uid="uid://c0appct1w04sv" path="res://Scenes/decorations/DEC_sunflower.tscn" id="9_s3kuw"]
+[ext_resource type="PackedScene" uid="uid://ds82f66iq8s2m" path="res://Scenes/damages/TK_spikes_2.tscn" id="10_ubgx8"]
+[ext_resource type="PackedScene" uid="uid://dibii41h6qqxy" path="res://Scenes/blocks/BG_dirty.tscn" id="12_x6yht"]
+[ext_resource type="PackedScene" uid="uid://cteka8spwm002" path="res://Scenes/blocks/BG_stone.tscn" id="13_2i1lu"]
+[ext_resource type="PackedScene" uid="uid://bveiuylky5b05" path="res://Scenes/damages/stone platform+.tscn" id="13_acmev"]
+[ext_resource type="PackedScene" uid="uid://c1wlg2q4m3vsd" path="res://Scenes/others/key.tscn" id="13_maq5c"]
+[ext_resource type="PackedScene" uid="uid://bxtnxhnqhhcgq" path="res://Scenes/decorations/DEC_wire.tscn" id="14_2pkgy"]
+[ext_resource type="PackedScene" uid="uid://8o5wc2tf557m" path="res://Scenes/blocks/BG_meat_1.tscn" id="14_baa7w"]
+[ext_resource type="PackedScene" uid="uid://dqyxiyfw2yws5" path="res://Scenes/blocks/BG_meat_2.tscn" id="15_655c5"]
+[ext_resource type="PackedScene" uid="uid://cke4msvcir3gs" path="res://Scenes/decorations/DEC_house.tscn" id="16_cltxl"]
+[ext_resource type="PackedScene" uid="uid://cdlcoomg3jhxj" path="res://Scenes/decorations/DEC_house_2.tscn" id="17_7cx8q"]
+[ext_resource type="PackedScene" uid="uid://2wbq5i2yqpxu" path="res://Scenes/decorations/DEC_tower_light.tscn" id="19_kmg30"]
+[ext_resource type="PackedScene" uid="uid://dyewjyin4svui" path="res://Scenes/entities/bot.tscn" id="20_olms7"]
+[ext_resource type="PackedScene" uid="uid://d0dygi6ky21a2" path="res://Scenes/decorations/DEC_pipe_1.tscn" id="21_y4inq"]
+[ext_resource type="PackedScene" uid="uid://bya7t1o6kjha7" path="res://Scenes/blocks/TK_BLK_changing.tscn" id="22_f3e84"]
+[ext_resource type="PackedScene" uid="uid://dncvp80uifc3g" path="res://Scenes/decorations/DEC_pipe_2.tscn" id="22_mtmq4"]
+[ext_resource type="PackedScene" uid="uid://cb4k8l86aq1rb" path="res://Scenes/blocks/TK_BLK_energy.tscn" id="23_x6yht"]
+[ext_resource type="PackedScene" uid="uid://diba8wu4gg1si" path="res://Scenes/blocks/TK_BLK_gravity.tscn" id="24_2i1lu"]
+[ext_resource type="PackedScene" uid="uid://dfblijob3kyms" path="res://Scenes/decorations/DEC_pipe_3.tscn" id="24_tlxcm"]
+[ext_resource type="PackedScene" uid="uid://bgwnlek06qjmq" path="res://Scenes/blocks/TK_BLK_jump.tscn" id="25_baa7w"]
+[ext_resource type="PackedScene" uid="uid://vtssuq7sdvqw" path="res://Scenes/decorations/DEC_lamp.tscn" id="25_mtmq4"]
+[ext_resource type="PackedScene" uid="uid://dim20tkd04p2b" path="res://Scenes/blocks/TK_BLK_repulsive.tscn" id="26_655c5"]
+[ext_resource type="PackedScene" uid="uid://b1v0gopy3hnx0" path="res://Scenes/blocks/TK_BLK_teleport.tscn" id="27_yh57i"]
+[ext_resource type="PackedScene" uid="uid://dve3y3la8qljl" path="res://Scenes/blocks/TK_box.tscn" id="28_ul8oc"]
+[ext_resource type="PackedScene" uid="uid://bp5ur2mu6fstt" path="res://Scenes/blocks/BLK_invisible.tscn" id="30_a5tuo"]
+[ext_resource type="PackedScene" uid="uid://bgfgs1ycjji0l" path="res://Scenes/blocks/TK_ring.tscn" id="31_x6yht"]
+[ext_resource type="PackedScene" uid="uid://b47mva068bw78" path="res://Scenes/triggers/TK_object.tscn" id="32_cskwt"]
+[ext_resource type="PackedScene" uid="uid://pgfyv1cbtwos" path="res://Scenes/decorations/DEC_eyes.tscn" id="32_dqtd0"]
+[ext_resource type="PackedScene" uid="uid://r73ttsdvhbfx" path="res://Scenes/triggers/TK_up.tscn" id="33_7w45h"]
+[ext_resource type="PackedScene" uid="uid://c36x3v6yj27tt" path="res://Scenes/triggers/TK_right.tscn" id="34_fgefa"]
+[ext_resource type="PackedScene" uid="uid://c4kubohptlvdm" path="res://Scenes/decorations/DEC_bench.tscn" id="35_bg158"]
+[ext_resource type="PackedScene" uid="uid://brsqprba8otgh" path="res://Scenes/triggers/TK_left.tscn" id="35_mwsyr"]
+[ext_resource type="PackedScene" uid="uid://v0y1immj5qrr" path="res://Scenes/decorations/DEC_cars.tscn" id="36_5gtdk"]
+[ext_resource type="PackedScene" uid="uid://db8dulmysvm4m" path="res://Scenes/triggers/TK_down.tscn" id="36_ij75q"]
+[ext_resource type="PackedScene" uid="uid://bfux75so46cw5" path="res://Scenes/triggers/TK_stop.tscn" id="37_7w45h"]
+[ext_resource type="PackedScene" uid="uid://dr3nrdl6k0y8j" path="res://Scenes/decorations/DEC_train.tscn" id="37_txkco"]
+[ext_resource type="PackedScene" uid="uid://b7bhs6wr1287e" path="res://Scenes/triggers/TK_items.tscn" id="37_y6qe2"]
+[ext_resource type="PackedScene" uid="uid://dnwytgqpmxdgp" path="res://Scenes/triggers/TK_broke.tscn" id="38_fgefa"]
+[ext_resource type="PackedScene" uid="uid://cdv0x1ai3kl2q" path="res://Scenes/triggers/TK_fight.tscn" id="38_vr46r"]
+[ext_resource type="PackedScene" uid="uid://dlar2nfu0i0hm" path="res://Scenes/triggers/TK_effects.tscn" id="39_hfow5"]
+[ext_resource type="PackedScene" uid="uid://dc84qjp15pgjq" path="res://Scenes/triggers/TK_teleport.tscn" id="39_mwsyr"]
+[ext_resource type="PackedScene" uid="uid://bo4tlhyq1pjuy" path="res://Scenes/blocks/BLK_dirt.tscn" id="39_ul8oc"]
+[ext_resource type="PackedScene" uid="uid://c6p6wifmjlot4" path="res://Scenes/damages/stone platform-.tscn" id="39_x6yht"]
+[ext_resource type="PackedScene" uid="uid://bt1tlqws7glr2" path="res://Scenes/blocks/BLK_stone.tscn" id="40_a5tuo"]
+[ext_resource type="PackedScene" uid="uid://ce40xb0xqf8oa" path="res://Scenes/blocks/BLK_grass.tscn" id="41_38j4l"]
+[ext_resource type="PackedScene" uid="uid://bulrc7vkeldqp" path="res://Scenes/blocks/BLK_meat_1.tscn" id="42_cskwt"]
+[ext_resource type="PackedScene" uid="uid://c73vtvpv1snvn" path="res://Scenes/blocks/BLK_meat_2.tscn" id="43_7w45h"]
+[ext_resource type="PackedScene" uid="uid://brvqrusc770rv" path="res://Scenes/blocks/BLK_box.tscn" id="44_fgefa"]
+[ext_resource type="PackedScene" uid="uid://cswu02wot4jaf" path="res://Scenes/blocks/BLK_arcade_4.tscn" id="45_mwsyr"]
+[ext_resource type="PackedScene" uid="uid://0416ec477wel" path="res://Scenes/blocks/TK_BLK_pinball.tscn" id="46_fgefa"]
+[ext_resource type="PackedScene" uid="uid://d1h5ucvd7vo1n" path="res://Scenes/blocks/BLK_arcade_3.tscn" id="47_2i1lu"]
+[ext_resource type="PackedScene" uid="uid://cchfk0m4ttr5j" path="res://Scenes/blocks/TK_BLK_stone_platform.tscn" id="47_mwsyr"]
+[ext_resource type="PackedScene" uid="uid://cldetf1gkkbxi" path="res://Scenes/blocks/BLK_arcade_14.tscn" id="48_baa7w"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ij75q"]
+resource_name = "layer_1"
+scenes/1/scene = ExtResource("35_bg158")
+scenes/2/scene = ExtResource("8_s3kuw")
+scenes/3/scene = ExtResource("36_5gtdk")
+scenes/4/scene = ExtResource("7_ly0jm")
+scenes/6/scene = ExtResource("32_dqtd0")
+scenes/8/scene = ExtResource("16_cltxl")
+scenes/9/scene = ExtResource("17_7cx8q")
+scenes/10/scene = ExtResource("25_mtmq4")
+scenes/11/scene = ExtResource("21_y4inq")
+scenes/12/scene = ExtResource("22_mtmq4")
+scenes/13/scene = ExtResource("24_tlxcm")
+scenes/14/scene = ExtResource("9_s3kuw")
+scenes/15/scene = ExtResource("19_kmg30")
+scenes/16/scene = ExtResource("37_txkco")
+scenes/17/scene = ExtResource("9_f3e84")
+scenes/18/scene = ExtResource("14_2pkgy")
+scenes/21/scene = ExtResource("12_x6yht")
+scenes/22/scene = ExtResource("13_2i1lu")
+scenes/23/scene = ExtResource("14_baa7w")
+scenes/24/scene = ExtResource("15_655c5")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_y6qe2"]
+resource_name = "layer_2"
+scenes/1/scene = ExtResource("13_maq5c")
+scenes/2/scene = ExtResource("32_cskwt")
+scenes/3/scene = ExtResource("37_y6qe2")
+scenes/4/scene = ExtResource("38_vr46r")
+scenes/5/scene = ExtResource("39_hfow5")
+scenes/6/scene = ExtResource("6_4subp")
+scenes/7/scene = ExtResource("10_ubgx8")
+scenes/8/scene = ExtResource("39_x6yht")
+scenes/9/scene = ExtResource("13_acmev")
+scenes/10/scene = ExtResource("22_f3e84")
+scenes/11/scene = ExtResource("23_x6yht")
+scenes/12/scene = ExtResource("24_2i1lu")
+scenes/13/scene = ExtResource("25_baa7w")
+scenes/14/scene = ExtResource("26_655c5")
+scenes/15/scene = ExtResource("27_yh57i")
+scenes/16/scene = ExtResource("28_ul8oc")
+scenes/17/scene = ExtResource("20_olms7")
+scenes/18/scene = ExtResource("30_a5tuo")
+scenes/19/scene = ExtResource("31_x6yht")
+scenes/20/scene = ExtResource("33_7w45h")
+scenes/21/scene = ExtResource("34_fgefa")
+scenes/22/scene = ExtResource("35_mwsyr")
+scenes/23/scene = ExtResource("36_ij75q")
+scenes/24/scene = ExtResource("37_7w45h")
+scenes/25/scene = ExtResource("38_fgefa")
+scenes/26/scene = ExtResource("39_mwsyr")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_vr46r"]
+resource_name = "layer_3"
+scenes/1/scene = ExtResource("39_ul8oc")
+scenes/2/scene = ExtResource("40_a5tuo")
+scenes/3/scene = ExtResource("41_38j4l")
+scenes/4/scene = ExtResource("42_cskwt")
+scenes/5/scene = ExtResource("43_7w45h")
+scenes/6/scene = ExtResource("44_fgefa")
+scenes/7/scene = ExtResource("45_mwsyr")
+scenes/8/scene = ExtResource("47_2i1lu")
+scenes/9/scene = ExtResource("48_baa7w")
+scenes/10/scene = ExtResource("47_mwsyr")
+scenes/11/scene = ExtResource("46_fgefa")
+
+[resource]
+tile_size = Vector2i(178, 170)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetScenesCollectionSource_ij75q")
+sources/2 = SubResource("TileSetScenesCollectionSource_y6qe2")
+sources/3 = SubResource("TileSetScenesCollectionSource_vr46r")

@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://pgfyv1cbtwos"]
+
+[ext_resource type="Script" uid="uid://dvogf4xys5usu" path="res://Scripts/controls/managers/obj_manager.gd" id="1_2a7j3"]
+[ext_resource type="Texture2D" uid="uid://clw7n4et7onkk" path="res://Sprite/decorations/eyes/eyes_1.png" id="1_4mk8y"]
+[ext_resource type="Script" uid="uid://gb15rdtxsv5s" path="res://Scripts/others/eyes_1.gd" id="2_mnuhg"]
+
+[sub_resource type="Animation" id="Animation_2a7j3"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_mnuhg"]
+resource_name = "shake"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -0.1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.466667, 0.966667, 1.5, 1.96667)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tyn5p"]
+_data = {
+&"RESET": SubResource("Animation_2a7j3"),
+&"shake": SubResource("Animation_mnuhg")
+}
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(1.113, 1.063)
+script = ExtResource("1_2a7j3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.88758e-06, -7.45058e-06)
+scale = Vector2(1.33333, 1.33333)
+texture = ExtResource("1_4mk8y")
+script = ExtResource("2_mnuhg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_tyn5p")
+}
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-80, -80, 160, 160)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

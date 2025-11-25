@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dhcynicdurx7u"]
+
+[node name="wall1" type="ColorRect"]
+offset_top = 1.0
+offset_bottom = 1.0
+scale = Vector2(0.15625, 3.63281)
+color = Color(0.654902, 0.32549, 0.176471, 1)

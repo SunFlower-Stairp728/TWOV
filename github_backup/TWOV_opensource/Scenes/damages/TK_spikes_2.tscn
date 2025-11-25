@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds82f66iq8s2m"]
+
+[ext_resource type="Script" uid="uid://dy7uhm03dh8kc" path="res://Scripts/damages/spikes.gd" id="1_iwv63"]
+[ext_resource type="Texture2D" uid="uid://cqtvccb1s7kgp" path="res://Sprite/entities/spikes.png" id="2_kk4ak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ng48k"]
+size = Vector2(11.4237, 7.74002)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_38v4f"]
+size = Vector2(234.667, 22)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, -100)
+rotation = 3.14159
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_iwv63")
+
+[node name="spikes3" type="Sprite2D" parent="."]
+position = Vector2(60, -28)
+texture = ExtResource("2_kk4ak")
+
+[node name="spikes2" type="Sprite2D" parent="."]
+position = Vector2(-60, -28)
+texture = ExtResource("2_kk4ak")
+
+[node name="spikes" type="Sprite2D" parent="."]
+position = Vector2(0, -28)
+texture = ExtResource("2_kk4ak")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(18.4412, 12.7353)
+
+[node name="CollisionShape2DArea2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1.40218)
+shape = SubResource("RectangleShape2D_ng48k")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3.8147e-06, 21)
+shape = SubResource("RectangleShape2D_38v4f")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
