@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bveiuylky5b05"]
+
+[ext_resource type="Script" uid="uid://dkvkhd468wvhx" path="res://Scripts/damages/stone_platform_y.gd" id="1_fv4ka"]
+[ext_resource type="PackedScene" uid="uid://cdypus4b1d1vq" path="res://Scenes/damages/TK_spikes.tscn" id="1_jwofs"]
+[ext_resource type="Texture2D" uid="uid://bkmtvogo0qgdb" path="res://Sprite/blocks/stone.png" id="2_fv4ka"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u161f"]
+size = Vector2(188.889, 198.889)
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(0.9, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_fv4ka")
+
+[node name="spikes" parent="CharacterBody2D" instance=ExtResource("1_jwofs")]
+position = Vector2(0, -110)
+
+[node name="spikes2" parent="CharacterBody2D" instance=ExtResource("1_jwofs")]
+position = Vector2(115, 0)
+rotation = 1.5708
+
+[node name="spikes3" parent="CharacterBody2D" instance=ExtResource("1_jwofs")]
+position = Vector2(0, 110)
+rotation = 3.14159
+
+[node name="spikes4" parent="CharacterBody2D" instance=ExtResource("1_jwofs")]
+position = Vector2(-115, 0)
+rotation = -1.5708
+
+[node name="stone" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(0, 6.61612e-06)
+scale = Vector2(94.4445, 90)
+texture = ExtResource("2_fv4ka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(1.05964e-06, 0)
+scale = Vector2(1, 0.9)
+shape = SubResource("RectangleShape2D_u161f")

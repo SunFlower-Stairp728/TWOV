@@ -1,0 +1,22 @@
+{
+	"stasik": {
+		"theme": {
+			"bg_shaders": {
+				"0": {"name": "texture_scale", "value": 1.0},
+				"1": {"name": "vertical_scroll_speed", "value": 0.0},
+				"2": {"name": "horizontal_scroll_speed", "value": 0.005},
+				"3": {"name": "speed", "value": 0.5},
+				"4": {"name": "color_brightness", "value": 0.8}},
+			"bg_fight_texture": "res://Sprite/backgrounds/zona.png",
+			"bg_fight_decor_texture": "res://Sprite/entities/bg_fights/decor_frog.png",
+			"bg_arena_texture": "res://Sprite/blocks/arcade_15.png",
+			"bg_arena_color": "#7A6914",
+			"music": "stas"},
+		"list_others": {
+			"health": 20,
+			"phases": 3,
+			"position": "right",
+			"sound_damage": "stasik",
+			"text": "У меня все есть! Мне большего не надо."}
+		}
+}

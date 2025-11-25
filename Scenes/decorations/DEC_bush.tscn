@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbct5om1mxvq6"]
+
+[ext_resource type="Script" uid="uid://dvogf4xys5usu" path="res://Scripts/controls/managers/obj_manager.gd" id="1_8w5ss"]
+[ext_resource type="Texture2D" uid="uid://dpuqk1wj1wmrr" path="res://Sprite/decorations/bush.png" id="1_tld8b"]
+[ext_resource type="Script" uid="uid://4pceyrg13h6a" path="res://Scripts/others/shaders_obj.gd" id="2_yklpm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24vmc"]
+atlas = ExtResource("1_tld8b")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeu03"]
+atlas = ExtResource("1_tld8b")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kasd3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24vmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aeu03")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(1.1, 1.1)
+script = ExtResource("1_8w5ss")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_kasd3")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.23777908
+script = ExtResource("2_yklpm")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-200, -200, 400, 400)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

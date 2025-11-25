@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvdruc2q4qvbb"]
+
+[ext_resource type="Script" uid="uid://cynpp2nm0nl4j" path="res://Scripts/others/fight_obj.gd" id="1_tk2pr"]
+
+[node name="Sprite2D" type="Sprite2D"]
+script = ExtResource("1_tk2pr")

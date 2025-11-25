@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c73vtvpv1snvn"]
+
+[ext_resource type="Script" uid="uid://dvogf4xys5usu" path="res://Scripts/controls/managers/obj_manager.gd" id="1_a1487"]
+[ext_resource type="Texture2D" uid="uid://bm6bdpbjq7en0" path="res://Sprite/blocks/meat_eyes.png" id="2_5uup6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqqvd"]
+size = Vector2(200, 200)
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(1.113, 1.063)
+script = ExtResource("1_a1487")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7.62939e-06, 7.62939e-06)
+scale = Vector2(1.33273, 1.33271)
+texture = ExtResource("2_5uup6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(0.8, 0.8)
+collision_layer = 19
+collision_mask = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_oqqvd")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-80, -80, 160, 160)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
