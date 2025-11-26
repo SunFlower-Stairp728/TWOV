@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://k45kaghjffye"]
+
+[ext_resource type="Texture2D" uid="uid://c7cp35yjfrakv" path="res://Sprite/decorations/tower.png" id="1_e2d0o"]
+[ext_resource type="Script" uid="uid://4pceyrg13h6a" path="res://Scripts/others/shaders_obj.gd" id="1_yuugh"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(0, 30)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("1_e2d0o")
+script = ExtResource("1_yuugh")

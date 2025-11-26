@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct0awuk62xs8p"]
+
+[ext_resource type="Script" uid="uid://cu64x7uu174yv" path="res://Scripts/controls/attack_heart.gd" id="1_us6we"]
+
+[node name="AttackUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_us6we")
+
+[node name="bar" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="background" type="ColorRect" parent="bar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 490.0
+offset_top = 340.0
+offset_right = 490.0
+offset_bottom = 340.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.65098)
+metadata/_edit_use_anchors_ = true
+
+[node name="progress" type="ColorRect" parent="bar/background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="target" type="ColorRect" parent="bar/background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+metadata/_edit_use_anchors_ = true

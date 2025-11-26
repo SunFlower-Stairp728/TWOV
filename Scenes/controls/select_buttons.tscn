@@ -1,0 +1,95 @@
+[gd_scene load_steps=14 format=3 uid="uid://5iw18wp87qms"]
+
+[ext_resource type="Script" uid="uid://du731n1elkrvo" path="res://Scripts/controls/managers/control_manager.gd" id="1_njm8d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o25ok"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 0.792157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqqgn"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 0.792157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njm8d"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5auww"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 0.792157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4rxh"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 0.792157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7e38d"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7n1o3"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 0.792157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhy07"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 0.792157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hmnqq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inwvc"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 0.792157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mu44"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 0.792157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fs2x"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="select_buttons" type="CanvasLayer"]
+
+[node name="Control_buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_njm8d")
+
+[node name="up" type="Button" parent="Control_buttons"]
+layout_mode = 1
+offset_top = -26.0
+offset_right = 12.0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_o25ok")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lqqgn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_njm8d")
+text = "up"
+metadata/_edit_use_anchors_ = true
+
+[node name="down" type="Button" parent="Control_buttons"]
+layout_mode = 1
+offset_top = -26.0
+offset_right = 16.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_5auww")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i4rxh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7e38d")
+text = "down"
+metadata/_edit_use_anchors_ = true
+
+[node name="accept" type="Button" parent="Control_buttons"]
+layout_mode = 1
+offset_left = -17.0
+offset_top = -26.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_7n1o3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lhy07")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hmnqq")
+text = "A"
+metadata/_edit_use_anchors_ = true
+
+[node name="cancel" type="Button" parent="Control_buttons"]
+layout_mode = 1
+offset_left = -17.0
+offset_top = -26.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_inwvc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5mu44")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0fs2x")
+text = "B"
+metadata/_edit_use_anchors_ = true

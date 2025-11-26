@@ -1,0 +1,10 @@
+{
+	"mr_signal": {
+		"health": 90,
+		"phases": 3,
+		"sound": "doll",
+		"theme": "tv_land",
+		"text": "На вас нападает тренировочный манекен.",
+		"position": "right"
+		}
+}

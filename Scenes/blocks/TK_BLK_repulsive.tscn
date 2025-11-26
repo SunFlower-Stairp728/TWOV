@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://dim20tkd04p2b"]
+
+[ext_resource type="Script" uid="uid://dgiic4h06may1" path="res://Scripts/blocks/TK_BLK_action_cube.gd" id="1_06vs7"]
+[ext_resource type="Texture2D" uid="uid://bh1wkcapphoqe" path="res://Sprite/blocks/cubes/changing cube.png" id="2_06vs7"]
+[ext_resource type="PackedScene" uid="uid://c30m8k5yjuhth" path="res://Scenes/effects/light.tscn" id="3_1j2qr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxnug"]
+size = Vector2(10.7368, 15.7893)
+
+[sub_resource type="Animation" id="Animation_pfbpc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.113, 1.063)]
+}
+
+[sub_resource type="Animation" id="Animation_m6m3q"]
+resource_name = "jump"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.366667, 0.7),
+"transitions": PackedFloat32Array(0.105112, 0.329877, 0.258816),
+"update": 0,
+"values": [Vector2(1.113, 1.063), Vector2(0.8, 0.9), Vector2(1.113, 1.063)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pm3vq"]
+_data = {
+&"RESET": SubResource("Animation_pfbpc"),
+&"jump": SubResource("Animation_m6m3q")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8kkg"]
+size = Vector2(200, 200)
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(1.113, 1.063)
+script = ExtResource("1_06vs7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(79.9641, 79.9624)
+texture = ExtResource("2_06vs7")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(18.4412, 12.7353)
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.8, 0.8)
+shape = SubResource("RectangleShape2D_pxnug")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="AnimationPlayer2D" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pm3vq")
+}
+
+[node name="light" parent="." instance=ExtResource("3_1j2qr")]
+scale = Vector2(50, 50)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(0.8, 0.8)
+collision_layer = 19
+collision_mask = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_g8kkg")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqyxiyfw2yws5"]
+
+[ext_resource type="Texture2D" uid="uid://bm6bdpbjq7en0" path="res://Sprite/blocks/meat_eyes.png" id="2_cj833"]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(1.113, 1.063)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.544973, 0.544975, 0.544974, 1)
+position = Vector2(-2.23517e-06, 5.87106e-06)
+scale = Vector2(1.33273, 1.33271)
+texture = ExtResource("2_cj833")

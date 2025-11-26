@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4kubohptlvdm"]
+
+[ext_resource type="Texture2D" uid="uid://bn3212pgy0cx8" path="res://Sprite/decorations/bench.png" id="1_x6p18"]
+[ext_resource type="Script" uid="uid://4pceyrg13h6a" path="res://Scripts/others/shaders_obj.gd" id="2_sdbo5"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(0, 5)
+scale = Vector2(2, 2)
+texture = ExtResource("1_x6p18")
+script = ExtResource("2_sdbo5")

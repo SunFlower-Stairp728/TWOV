@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1v0gopy3hnx0"]
+
+[ext_resource type="Script" uid="uid://dgiic4h06may1" path="res://Scripts/blocks/TK_BLK_action_cube.gd" id="1_4i1co"]
+[ext_resource type="Texture2D" uid="uid://bh1wkcapphoqe" path="res://Sprite/blocks/cubes/changing cube.png" id="2_4i1co"]
+[ext_resource type="PackedScene" uid="uid://c30m8k5yjuhth" path="res://Scenes/effects/light.tscn" id="3_nkttn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwnek"]
+size = Vector2(10.7368, 15.881664)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcrtc"]
+size = Vector2(200, 200)
+
+[node name="Node2D" type="Node2D" groups=["cubes"]]
+scale = Vector2(1.113, 1.063)
+script = ExtResource("1_4i1co")
+cube = "cube_5"
+index = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.35438e-06, -4.76837e-06)
+scale = Vector2(79.9641, 79.9624)
+texture = ExtResource("2_4i1co")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(18.4412, 12.7353)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 3.808498e-07)
+scale = Vector2(0.7999999, 0.8)
+shape = SubResource("RectangleShape2D_rwnek")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="light" parent="." instance=ExtResource("3_nkttn")]
+position = Vector2(-6.2893076, 13.170273)
+scale = Vector2(50, 50)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(0.8, 0.8)
+collision_layer = 19
+collision_mask = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.0224686, 0.5)
+shape = SubResource("RectangleShape2D_fcrtc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

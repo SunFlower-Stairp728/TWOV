@@ -1,0 +1,287 @@
+[gd_scene load_steps=16 format=3 uid="uid://dukun3ocqm7dx"]
+
+[ext_resource type="Script" uid="uid://dhiqaqfax5db2" path="res://Scripts/controls/dialog.gd" id="1_hhvis"]
+[ext_resource type="Shader" uid="uid://boe0wjvaejh70" path="res://shaders/infinite_background.gdshader" id="2_4hygi"]
+[ext_resource type="Texture2D" uid="uid://dehj6miy5bab5" path="res://Sprite/dialog/scenes/intro/scene_0.png" id="2_hbgcr"]
+[ext_resource type="AudioStream" uid="uid://hw3ekqavc7qy" path="res://sounds/sfx_sounds/freezing.mp3" id="4_642cu"]
+[ext_resource type="AudioStream" uid="uid://c5jwcnol1wjib" path="res://sounds/sfx_sounds/soul_eat.mp3" id="4_jlq4c"]
+[ext_resource type="Texture2D" uid="uid://c8b4bjm8wh6nk" path="res://Sprite/blocks/box.png" id="5_bh6y3"]
+[ext_resource type="Script" uid="uid://hpih2p6xftyx" path="res://Scripts/controls/managers/screen_manager.gd" id="6_nojn5"]
+[ext_resource type="Texture2D" uid="uid://38ptxqmv70v3" path="res://others/for builds programm/icons/icon.svg" id="7_642cu"]
+
+[sub_resource type="Animation" id="Animation_642cu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_hbgcr"]
+resource_name = "act_1"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0333333, 1.7333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 3]
+}
+
+[sub_resource type="Animation" id="Animation_jlq4c"]
+resource_name = "act_2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 1.4333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [4, 6, 10]
+}
+
+[sub_resource type="Animation" id="Animation_em8jk"]
+resource_name = "act_3"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333, 2.3666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [9, 5, 10]
+}
+
+[sub_resource type="Animation" id="Animation_ocku0"]
+resource_name = "act_4"
+length = 6.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.93333334, 4.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [11, 11, 16]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../sound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.752,
+"start_offset": 0.0,
+"stream": ExtResource("4_jlq4c")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_642cu")
+}],
+"times": PackedFloat32Array(0.8333333, 3.6333334)
+}
+tracks/1/use_blend = true
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(6.0333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [{
+"dialog": true,
+"scene": true
+}],
+"method": &"end_dialog_sequence"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ocku0"]
+_data = {
+&"RESET": SubResource("Animation_642cu"),
+&"act_1": SubResource("Animation_hbgcr"),
+&"act_2": SubResource("Animation_jlq4c"),
+&"act_3": SubResource("Animation_em8jk"),
+&"act_4": SubResource("Animation_ocku0")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jlq4c"]
+shader = ExtResource("2_4hygi")
+shader_parameter/speed = 0.5
+shader_parameter/vertical_scroll_speed = 0.0
+shader_parameter/horizontal_scroll_speed = 0.5
+shader_parameter/random_direction_change = 0.0
+shader_parameter/direction_change_cooldown = 5.0
+shader_parameter/bulge_intensity = 0.0
+shader_parameter/wave_distortion = 0.0
+shader_parameter/glitch_duration = 0.0
+shader_parameter/glitch_cooldown = 0.0
+shader_parameter/glitch_power = 0.0
+shader_parameter/hue_shift_speed = 0.0
+shader_parameter/blood_intensity = 0.0
+shader_parameter/texture_scale = 0.01
+shader_parameter/color_tint = Vector3(1, 1, 1)
+shader_parameter/color_saturation = 1.0
+shader_parameter/color_brightness = 0.8
+
+[node name="dialog_bar" type="CanvasLayer"]
+layer = 8
+
+[node name="dialog" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_hhvis")
+metadata/_edit_use_anchors_ = true
+
+[node name="visual_scene" type="Control" parent="dialog"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="ColorRect" parent="dialog/visual_scene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" parent="dialog/visual_scene"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.75
+offset_top = -148.5
+offset_right = 133.75
+offset_bottom = 148.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="photo" type="Sprite2D" parent="dialog/visual_scene"]
+position = Vector2(507, 297)
+texture = ExtResource("2_hbgcr")
+hframes = 4
+vframes = 5
+script = ExtResource("6_nojn5")
+type_object = 1
+position_margin = Vector2(0, -50)
+fill_coefficient = Vector2(2, 2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="dialog/visual_scene/photo"]
+libraries = {
+&"": SubResource("AnimationLibrary_ocku0")
+}
+next/act_2 = &"act_3"
+
+[node name="dialog_bar" type="Control" parent="dialog"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -168.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("6_nojn5")
+X_current_anchor = 2
+Y_current_anchor = 2
+wall_display = true
+fill_coefficient = Vector2(1, 4)
+
+[node name="visual_dialog" type="Control" parent="dialog/dialog_bar"]
+material = SubResource("ShaderMaterial_jlq4c")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="TextureRect" parent="dialog/dialog_bar/visual_dialog"]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_bh6y3")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="icon_player_1" type="TextureRect" parent="dialog/dialog_bar/visual_dialog"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025300289
+anchor_top = -0.77400005
+anchor_right = 0.35000002
+anchor_bottom = 0.773381
+offset_left = -0.806293
+offset_top = -0.0549469
+offset_right = -0.2546997
+offset_bottom = 0.072006226
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_642cu")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="text" type="Label" parent="dialog/dialog_bar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "test"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="music_bg" type="AudioStreamPlayer" parent="."]
+
+[node name="sound" type="AudioStreamPlayer" parent="."]

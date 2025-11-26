@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq2sqb1u1l5ve"]
+
+[ext_resource type="Script" uid="uid://ftd4l2nvfq4p" path="res://addons/virtual_joystick/test/player.gd" id="3_dsmxw"]
+
+[node name="Test" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(600, 300)
+script = ExtResource("3_dsmxw")

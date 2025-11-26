@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=4 uid="uid://b5dnt07iy84v6"]
+
+[ext_resource type="Script" uid="uid://c87qhg0p458jx" path="res://Scripts/levels/main_level.gd" id="1_nmd20"]
+[ext_resource type="Texture2D" uid="uid://b8nxw4f21621t" path="res://Sprite/blocks/arcade_15.png" id="2_nmd20"]
+[ext_resource type="Texture2D" uid="uid://ck7ai75af25xl" path="res://Sprite/blocks/arcade_11.png" id="2_qsy8a"]
+[ext_resource type="Texture2D" uid="uid://c8b4bjm8wh6nk" path="res://Sprite/blocks/box.png" id="4_nmd20"]
+[ext_resource type="TileSet" uid="uid://drup5o6mkmkj" path="res://Scenes/levels/level_map.tres" id="5_kjhus"]
+[ext_resource type="PackedScene" uid="uid://eb0hdrc8ajp7" path="res://Scenes/others/door.tscn" id="6_fujjo"]
+[ext_resource type="PackedScene" uid="uid://wnxo61e0tny2" path="res://Scenes/entities/player.tscn" id="7_dts51"]
+[ext_resource type="PackedScene" uid="uid://ckdbemdcfo55n" path="res://Scenes/controls/gui_control.tscn" id="8_l5bmu"]
+
+[node name="level_2" type="Node2D"]
+top_level = true
+script = ExtResource("1_nmd20")
+play_music = false
+type = "arcade"
+sky_texture = ExtResource("2_nmd20")
+inf_sky = true
+background_1_texture = ExtResource("4_nmd20")
+background_2_texture = ExtResource("2_qsy8a")
+background_3_texture = ExtResource("2_nmd20")
+environment = 2
+
+[node name="layer_light" type="CanvasModulate" parent="."]
+
+[node name="layer_1" type="TileMapLayer" parent="."]
+modulate = Color(0.92156863, 0.92156863, 0.92156863, 1)
+z_index = -1
+tile_map_data = PackedByteArray("AAD+/wEAAQAAAAAAAgD//wEAAQAAAAAAAgAAAAEAAQAAAAAAAgD//wAAAQAAAAAAAgAAAAAAAQAAAAAAAgD/////AQAAAAAAAgD1////AQAAAAAAAgD0////AQAAAAAAAgD1//7/AQAAAAAAAgD7/wAAAQAAAAAAAgD+//n/AQAAAAAABAD8//r/AQAAAAAAAgD7//r/AQAAAAAAAgD6//r/AQAAAAAAAgD7//n/AQAAAAAAAgD7//j/AQAAAAAAAgD8//n/AQAAAAAAAgD9//r/AQAAAAAAAgA=")
+tile_set = ExtResource("5_kjhus")
+
+[node name="door" parent="." instance=ExtResource("6_fujjo")]
+position = Vector2(0, 100)
+
+[node name="layer_2" type="TileMapLayer" parent="."]
+z_index = 1
+tile_map_data = PackedByteArray("AAACAP7/AgAAAAAAEAD8//r/AgAAAAAAEAD9//r/AgAAAAAAEAD1////AgAAAAAAEAACAP3/AgAAAAAAEAABAP7/AgAAAAAAEAA=")
+tile_set = ExtResource("5_kjhus")
+
+[node name="player" parent="." instance=ExtResource("7_dts51")]
+position = Vector2(-13.9999695, 233.99997)
+rotation = 0.000814613
+
+[node name="layer_3" type="TileMapLayer" parent="."]
+z_index = 1
+tile_map_data = PackedByteArray("AAD+/wIAAwAAAAAABgD//wIAAwAAAAAABgAAAAIAAwAAAAAABgD//wMAAwAAAAAABgD//wQAAwAAAAAABgD//wUAAwAAAAAABgAAAAMAAwAAAAAABgAAAAQAAwAAAAAABgABAAIAAwAAAAAABgABAAMAAwAAAAAABgACAAIAAwAAAAAABgACAAEAAwAAAAAABgABAAEAAwAAAAAABgABAAAAAwAAAAAABgABAP//AwAAAAAABgACAAAAAwAAAAAABgABAAQAAwAAAAAABgAAAAUAAwAAAAAABgAAAAYAAwAAAAAABgAAAAcAAwAAAAAABgABAAUAAwAAAAAABgD//wYAAwAAAAAABgD+/wMAAwAAAAAABgD+/wQAAwAAAAAABgD9/wIAAwAAAAAABgACAP//AwAAAAAABgADAAAAAwAAAAAABgACAAMAAwAAAAAABgACAAQAAwAAAAAABgACAAUAAwAAAAAABgABAAYAAwAAAAAABgABAAcAAwAAAAAABgADAAEAAwAAAAAABgADAAIAAwAAAAAABgADAAMAAwAAAAAABgD//wcAAwAAAAAABgD//wgAAwAAAAAABgD//wkAAwAAAAAABgAAAAgAAwAAAAAABgD7/wEAAwAAAAAABgD7/wIAAwAAAAAABgD5/wAAAwAAAAAABgD5/wEAAwAAAAAABgD5/wIAAwAAAAAABgD5/wMAAwAAAAAABgD2/wAAAwAAAAAABgD1/wAAAwAAAAAABgD0/wAAAwAAAAAABgD1/wEAAwAAAAAABgD1/wIAAwAAAAAABgD0/wEAAwAAAAAABgD1////AAAAAAAADgD8//z/AwAAAAAABgD9//z/AwAAAAAABgD+//z/AwAAAAAABgD9//3/AwAAAAAABgD6//z/AwAAAAAABgD7//z/AwAAAAAABgD8//3/AwAAAAAABgD9//7/AwAAAAAABgD7//3/AwAAAAAABgADAP//AwAAAAAABgADAAQAAwAAAAAABgADAP7/AwAAAAAABgD5//v/AwAAAAAABgD6//v/AwAAAAAABgD7//v/AwAAAAAABgD8//v/AwAAAAAABgD9//v/AwAAAAAABgD+//v/AwAAAAAABgD///v/AwAAAAAABgA=")
+tile_set = ExtResource("5_kjhus")
+
+[node name="gui_control" parent="." instance=ExtResource("8_l5bmu")]
+visible = false
